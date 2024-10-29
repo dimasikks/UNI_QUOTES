@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+ webcontext:
+  build:
+   context: ./WebContext
+   dockerfile: Dockerfile
+  ports:
+  - "777:80"
+  depends_on:
+  - database
+  networks:
+  - network
+
+ database:
+  build:
+   context: ./Database
+   dockerfile: Dockerfile
+  ports:
+  - "5432:5432"
+  networks:
+  - network
+
+networks:
+ network:
+  driver: bridge
