@@ -4,6 +4,10 @@ RUN apt-get update && apt-get install -y apache2 php-pgsql php
 
 WORKDIR /var/www/html
 
+RUN rm /var/www/html/index*
+
+RUN sed -i '/<VirtualHost \*:80>/a \ \ \ \ \ \ \ \ DirectoryIndex registration.php\n' /e>
+
 COPY . /var/www/html
 
 EXPOSE 80
