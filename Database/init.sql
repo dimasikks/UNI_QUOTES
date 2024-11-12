@@ -9,6 +9,30 @@ CREATE TABLE IF NOT EXISTS users (
     pass VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS users_create (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    time_create TIMESTAMP NOT NULL,
+    CONSTRAINT cur_user FOREIGN KEY (id) REFERENCES users(id),
+    CONSTRAINT cur_username FOREIGN KEY (username) REFERENCES users(username)
+);
+
+CREATE OR REPLACE FUNCTION set_create()
+RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO users_create (id, username, time_create)
+    VALUES (NEW.id, NEW.username, NOW())
+    ON CONFLICT (id) DO UPDATE 
+    SET time_create = NOW(); 
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER set_create_trigger
+AFTER INSERT OR UPDATE ON users
+FOR EACH ROW
+EXECUTE FUNCTION set_create();
+
 INSERT INTO users(username,email,pass) VALUES ('admin','admin@admin.su','admin321');
 
 CREATE TABLE IF NOT EXISTS quote_motivation (
