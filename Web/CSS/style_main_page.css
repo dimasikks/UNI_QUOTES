@@ -1,0 +1,118 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+    color:azure;
+	background: linear-gradient(to right,rgb(6, 3, 3),rgb(2, 6, 22));
+}
+.navbar{
+    width: 100%;
+    position: fixed;
+    height: 9vh;
+    text-align: center;
+    background-color: black;
+}
+.show{
+    background: linear-gradient(-45deg, #ffffff, #000000,rgb(255, 255, 255));
+	padding-top: 1vh;
+    background-size: 300%;
+    font-size: 4vh;
+    font-weight: 700;
+	letter-spacing: 1vh;
+	text-transform: uppercase;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: showw 9s ease-in-out infinite;
+	-moz-animation: showw 9s ease-in-out infinite;
+	-webkit-animation: showw 9s ease-in-out infinite;
+}
+@keyframes showw {
+	0% { background-position: 0px 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0px 50%; }
+}
+.daily_quote{
+    padding-top: 11vh;
+    padding-left: 20vh;
+    height: 17vh;
+}
+.quote_of_day {
+    font-size: 3vh;
+    font-style: italic;
+    color:rgb(177, 177, 177);
+}
+.author_of_quote_photo{
+    width: 100%;
+    text-align: center;
+}
+.author_of_quote{
+    width: 100%;
+    text-align: center;
+    font-size: 2vh;
+    letter-spacing: 2px;
+}
+.main{
+    margin-bottom: 5vh;
+    text-align: center;
+}
+.sign{
+    height: 2vh;
+    background-color:black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+}
+select{
+    height: 5vh;
+    margin-right: 3vh;
+    font-size: 2vh;
+    border-style: solid;
+    border-color: white;
+    border-radius: 1vh;
+    border-width: 1vh;
+    transition: all 0.1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+select:hover{
+    color:rgb(255, 255, 255);
+    background-color: rgb(8, 21, 35);
+    border-color: rgb(8, 21, 35);
+}
+button{
+    height: 5vh;
+    font-size: 2vh;
+    border-style: solid;
+    border-color: white;
+    border-radius: 1vh;
+    background-color: white;
+    transition: all 0.1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+button:hover{
+    color:rgb(255, 255, 255);
+    background-color: rgb(8, 21, 35);
+    border-color: rgb(8, 21, 35);
+}
+.quote_main{
+    color:rgb(233, 223, 223);
+	font-style: italic;
+    font-weight: 400;
+    font-size: 3vh;
+    text-align: center;
+}
+.author_main{
+    font-size:2vh;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 3px;
+}
+.border_main{
+    border-image: linear-gradient(to left, #8ddada 10%, #030725 100%) 1;
+    border-width: 4px;
+    border-style: solid;
+    padding: 1vh;
+}

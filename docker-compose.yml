@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+ webcontext:
+  build:
+   context: ./Web
+   dockerfile: Dockerfile
+  ports:
+  - "777:80"
+  depends_on:
+   - database
+  volumes:
+   - ./Storage:/var/www/html/Storage
+  networks:
+   network:
+    ipv4_address: 10.10.10.11
+
+ database:
+  build:
+   context: ./Database
+   dockerfile: Dockerfile
+  ports:
+  - "5433:5432"
+  networks:
+   network:
+    ipv4_address: 10.10.10.10
+
+ app:
+  build:
+   context: ./App
+   dockerfile: Dockerfile
+  depends_on:
+   - database
+  volumes:
+   - ./Storage:/app/Storage
+  networks:
+   network:
+    ipv4_address: 10.10.10.12
+
+networks:
+ network:
+  driver: bridge
+  ipam:
+   config:
+    - subnet: 10.10.10.0/24

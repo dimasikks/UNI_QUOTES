@@ -1,0 +1,74 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+	background: linear-gradient(to right,rgb(6, 3, 3),rgb(2, 6, 22));
+	flex-direction: column;
+	margin-bottom: 20vh;
+}
+.container {
+	margin-left: 35vw;
+	width: 30vw;
+	height: 52vh;
+	margin-top: 15vh;
+	padding: 20px;
+	background: #130825;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+	color: azure;
+	text-align: center;
+}
+.form-group {
+	text-align: center;
+	margin-bottom: 2vh;
+}
+.form-group input {
+	color: azure;
+	font-size: medium;
+	background-color: #130825;
+	width: 40vh;
+	padding: 2vh;
+	border: 0.5vh solid #ffffff;
+	border-radius: 1vh;
+}
+.btn {
+	font-size: large;
+	width: 100%;
+	margin-top: 5vh;
+	padding: 2vh;
+	background-color: #020503;
+	border: none;
+	color: white;
+	border-radius: 1vh;
+	cursor: pointer;
+	transition: all 0.1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.btn:hover {
+	color:black;
+    background-color: rgb(212, 222, 233);
+    border-color: rgb(8, 21, 35);
+}
+.sign{
+	color:azure;
+    height: 2vh;
+    background-color:black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.registration_answer{
+	text-align: center;
+	font-size: 5vh;
+	color: azure;
+}
+.authorization_answer{
+	text-align: center;
+	font-size: 5vh;
+	color: azure;
+}
